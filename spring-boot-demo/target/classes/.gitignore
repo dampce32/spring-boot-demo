@@ -1,3 +1,6 @@
 /static/
 /templates/
 /org/
+/data.sql
+/data_first.sql
+/com/
