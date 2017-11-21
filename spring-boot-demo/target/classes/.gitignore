@@ -1,1 +1,4 @@
 /org/
+/banner.txt
+/application-dev.properties
+/application-prod.properties

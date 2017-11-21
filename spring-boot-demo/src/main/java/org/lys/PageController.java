@@ -29,7 +29,7 @@ public class PageController {
      * @author SHANHY
      * @create  2016年1月5日
      */
-    @RequestMapping(value = {"/","/index"})
+    @RequestMapping(value = {"/index"})
     public String index(Map<String, Object> model){
         // 直接返回字符串，框架默认会去 spring.view.prefix 目录下的 （index拼接spring.view.suffix）页面
         // 本例为 /WEB-INF/jsp/index.jsp
