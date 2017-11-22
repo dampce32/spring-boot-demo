@@ -46,9 +46,7 @@ public class DataController {
 	 */
 	@RequestMapping("/q1")
 	public List<Person> q1(String address){
-		
 		List<Person> people = personRepository.findByAddress(address);
-		
 		return people;
 		
 	}
@@ -58,9 +56,7 @@ public class DataController {
 	 */
 	@RequestMapping("/q2")
 	public Person q2(String name,String address){
-		
 		Person people = personRepository.findByNameAndAddress(name, address);
-		
 		return people;
 		
 	}
@@ -114,14 +110,11 @@ public class DataController {
 	}
 	
 	
-//	@RequestMapping("/auto")
-//	public Page<Person> auto(Person person){
-//		
-//		Page<Person> pagePeople = personRepository.findByAuto(person, new PageRequest(0, 10));
-//		
-//		return pagePeople;
-//		
-//	}
+	@RequestMapping("/auto")
+	public Page<Person> auto(Person person){
+		Page<Person> pagePeople = personRepository.findByAuto(person, new PageRequest(0, 10));
+		return pagePeople;
+	}
 	
 	
 
