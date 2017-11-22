@@ -135,5 +135,25 @@ public class DataController {
 		
 	}
 	
+	@RequestMapping("/put")
+	public Person put(Person person){
+		return demoService.save(person);//http://127.0.0.1:8080/helloboot/put?name=cc&age=22&address=成都
+		
+	}
+
+	
+	@RequestMapping("/able")
+	public Person cacheable(Person person){//http://127.0.0.1:8080/helloboot/able?id=11
+		
+		return demoService.findOne(person);
+		
+	}
+	
+	@RequestMapping("/evit")
+	public String  evit(Long id){
+		 demoService.remove(id);
+		 return "ok";
+		
+	}
 
 }
