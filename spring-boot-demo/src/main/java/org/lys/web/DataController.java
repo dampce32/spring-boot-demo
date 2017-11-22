@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.lys.dao.PersonRepository;
 import org.lys.domain.Person;
+import org.lys.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -116,6 +117,23 @@ public class DataController {
 		return pagePeople;
 	}
 	
+	
+	@Autowired
+	DemoService demoService;
+	
+	@RequestMapping("/rollback")
+	public Person rollback(Person person){ //http://127.0.0.1:8080/helloboot/rollback?name=%E6%B1%AA%E4%BA%91%E9%A3%9E&age=32
+		
+		return demoService.savePersonWithRollBack(person);
+	}
+	
+	@RequestMapping("/norollback")
+	public Person noRollback(Person person){//2
+		
+		return demoService.savePersonWithoutRollBack(person);
+		
+		
+	}
 	
 
 }
